@@ -1,0 +1,3 @@
+URL = http://replay.pokemonshowdown.com
+HISTORYFILE = history.txt
+DELAY = 300

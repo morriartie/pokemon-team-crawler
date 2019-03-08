@@ -1,0 +1,31 @@
+if('|move|p1' in line):
+        mvname = line.split('|')[3]
+        # filtering name changes in megas or specials
+        if(p1active.replace('-','_') in p1pokes):
+            p1active = p1active.replace('-','_')
+        if('-' in p1active):
+            if(p1active.replace('-','_') not in p1pokes):
+                print('changing name: {} -> '.format(p1active),end='')
+                p1active = p1active.split('-')[0]
+                print('{}'.format(p1active))
+        ####
+        if(mvname in p1pokes[p1active]['moves']):
+            p1pokes[p1active]['moves'][mvname] += 1
+        else:
+            p1pokes[p1active]['moves'][mvname] = 1
+
+if('|move|p2' in line):
+        mvname = line.split('|')[3]
+        # filtering name changes in megas or specials
+        if(p2active.replace('-','_') in p2pokes):
+            p2active = p2active.replace('-','_')
+        if('-' in p2active):
+            if(p2active.replace('-','_') not in p2pokes):
+                print('changing name: {} -> '.format(p2active),end='')
+                p2active = p2active.split('-')[0]
+                print('{}'.format(p2active))
+        ####
+        if(mvname in p2pokes[p2active]['moves']):
+            p2pokes[p2active]['moves'][mvname] += 1
+        else:
+            p2pokes[p2active]['moves'][mvname] = 1
